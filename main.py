@@ -7,7 +7,7 @@ sys.path.append(main_path)
 from TestPlanos import run_testplanos
 csvFile = sys.argv[1]
 if len(sys.argv) > 2:
-    sleep_time = sys.argv[1] # en segundos
+    sleep_time = sys.argv[2] # en segundos
 else:
     sleep_time = 0.017 # approx 60fps = 0.017
 # Fetch & Pull
