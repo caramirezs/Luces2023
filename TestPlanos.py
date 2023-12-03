@@ -16,7 +16,8 @@ def chunks(lst, n):
 def run_testplanos(csvFile, sleep_time):
     print(csvFile)
     NUMBEROFLEDS = 750
-    pixels = neopixel.NeoPixel(board.D18, NUMBEROFLEDS, auto_write=False, pixel_order=neopixel.RGB)
+    pixels = neopixel.NeoPixel(board.D18, NUMBEROFLEDS, auto_write=False,
+                               pixel_order=neopixel.RGB, brightness=0.6)
 
     # read the file
     # iterate through the entire thing and make all the points the same colour
