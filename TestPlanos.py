@@ -44,6 +44,6 @@ def run_testplanos(csvFile, sleep_time):
                 pixels[LED] = frame[LED]
                 LED += 1
             pixels.show()
-            time.sleep(sleep_time)
+            time.sleep(1)
         ciclo +=1
         print(f'Cilo terminado ({ciclo})')
