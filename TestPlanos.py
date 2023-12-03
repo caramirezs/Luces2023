@@ -53,5 +53,6 @@ def run_puntos_region(lista_puntos):
     pixels = neopixel.NeoPixel(board.D18, NUMBEROFLEDS, auto_write=False, pixel_order=neopixel.RGB)
     pixels.fill((0, 0, 0))
     time.sleep(2)
-    for i in lista_puntos:
-        pixels[i] = (255, 0, 0)
+    while True:
+        for i in lista_puntos:
+            pixels[i] = (255, 0, 0)
