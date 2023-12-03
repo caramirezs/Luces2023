@@ -51,8 +51,11 @@ def run_testplanos(csvFile, sleep_time):
 def run_puntos_region(lista_puntos):
     NUMBEROFLEDS = 750
     pixels = neopixel.NeoPixel(board.D18, NUMBEROFLEDS, auto_write=False, pixel_order=neopixel.RGB)
+    print('LEDS apagados')
     pixels.fill((0, 0, 0))
+    pixels.show()
     time.sleep(2)
     while True:
         for i in lista_puntos:
             pixels[i] = (255, 0, 0)
+            pixels.show()
