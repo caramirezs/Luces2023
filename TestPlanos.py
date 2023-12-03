@@ -60,12 +60,11 @@ def run_puntos_region(lista_puntos):
     time.sleep(1)
     while True:
         for i in lista_puntos:
-            print(f'Prendiendo pixel {i}')
             pixels[i] = (0, 0, 50)
         pixels.show()
 
         for i in lista_puntos:
             print(f'Prendiendo pixel {i}')
-            pixels[i] = (255, 0, 0)
+            pixels[i] = (100, 0, 0)
             pixels.show()
             input('continuar?')
