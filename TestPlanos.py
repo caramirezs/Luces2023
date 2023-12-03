@@ -12,7 +12,7 @@ def chunks(lst, n):
     for i in range(0, len(lst), n):
         yield lst[i:i + n]
 
-def run_testplanos(csvFile, sleep_time):
+def run_testplanos(csvFile, sleep_time:int):
     NUMBEROFLEDS = 750
     pixels = neopixel.NeoPixel(board.D18, NUMBEROFLEDS, auto_write=False, pixel_order=neopixel.RGB)
     print(csvFile)
