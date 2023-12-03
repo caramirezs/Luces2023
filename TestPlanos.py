@@ -13,9 +13,9 @@ def chunks(lst, n):
         yield lst[i:i + n]
 
 def run_testplanos(csvFile, sleep_time):
+    print(csvFile)
     NUMBEROFLEDS = 750
     pixels = neopixel.NeoPixel(board.D18, NUMBEROFLEDS, auto_write=False, pixel_order=neopixel.RGB)
-    print(csvFile)
 
     # read the file
     # iterate through the entire thing and make all the points the same colour
@@ -47,3 +47,11 @@ def run_testplanos(csvFile, sleep_time):
             time.sleep(sleep_time)
         ciclo +=1
         print(f'Cilo terminado ({ciclo})')
+
+def run_puntos_region(lista_puntos):
+    NUMBEROFLEDS = 750
+    pixels = neopixel.NeoPixel(board.D18, NUMBEROFLEDS, auto_write=False, pixel_order=neopixel.RGB)
+    pixels.fill((0, 0, 0))
+    time.sleep(2)
+    for i in lista_puntos:
+        pixels[i] = (255, 0, 0)
