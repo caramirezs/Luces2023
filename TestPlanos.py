@@ -55,7 +55,7 @@ def run_puntos_region(lista_puntos):
     pixels = neopixel.NeoPixel(board.D18, NUMBEROFLEDS, auto_write=False,
                                pixel_order=neopixel.RGB, brightness=0.6)
     print('LEDS encendidos')
-    pixels.fill((255, 255, 255))
+    pixels.fill((0, 255, 0))
     pixels.show()
     time.sleep(1)
     while True:
