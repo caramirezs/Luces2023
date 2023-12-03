@@ -58,4 +58,4 @@ def run_puntos_region(lista_puntos):
     while True:
         for i in lista_puntos:
             pixels[i] = (255, 0, 0)
-            pixels.show()
+        pixels.show()
