@@ -12,6 +12,7 @@ def chunks(lst, n):
     for i in range(0, len(lst), n):
         yield lst[i:i + n]
 
+
 def run_testplanos(csvFile, sleep_time):
     print(csvFile)
     NUMBEROFLEDS = 750
@@ -30,12 +31,12 @@ def run_testplanos(csvFile, sleep_time):
             # break up the list of rgb values
             row.pop(0)
             numbers = list(map(int, row))
-            rgb_tuples = [(numbers[i], numbers[i+1], numbers[i+2]) for i in range(0, len(numbers), 3)]
+            rgb_tuples = [(numbers[i], numbers[i + 1], numbers[i + 2]) for i in range(0, len(numbers), 3)]
             lightArray.append(rgb_tuples)
     print("Finished Parsing")
 
     # run the code on the tree
-    ciclo=0
+    ciclo = 0
     while True:
         for n, frame in enumerate(lightArray):
             print("running frame " + str(n))
@@ -45,14 +46,16 @@ def run_testplanos(csvFile, sleep_time):
                 LED += 1
             pixels.show()
             time.sleep(sleep_time)
-        ciclo +=1
+        ciclo += 1
         print(f'Cilo terminado ({ciclo})')
+
 
 def run_puntos_region(lista_puntos):
     NUMBEROFLEDS = 750
-    pixels = neopixel.NeoPixel(board.D18, NUMBEROFLEDS, auto_write=False, pixel_order=neopixel.RGB)
+    pixels = neopixel.NeoPixel(board.D18, NUMBEROFLEDS, auto_write=False,
+                               pixel_order=neopixel.RGB, brightness=0.6)
     print('LEDS encendidos')
-    pixels.fill((255,255,255))
+    pixels.fill((255, 255, 255))
     pixels.show()
     time.sleep(1)
     while True:
