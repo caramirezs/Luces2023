@@ -13,23 +13,6 @@ else:
     sleep_time = 0.017 # approx 60fps = 0.017
 # Fetch & Pull
 
-def git_pull():
-    PATH_OF_GIT_REPO = f'{main_path}/.git'
-    try:
-        repo = git.Repo(PATH_OF_GIT_REPO)
-        origin = repo.remote(name='origin')
-        for remote in repo.remotes:
-            remote.fetch()
-        origin.pull()
-    except:
-        print('Some error occured while fetch/pull the code')
-
-    return None
-
-
-git_pull()
-####
-
 run_testplanos(csvFile, sleep_time)
 
 
