@@ -6,8 +6,9 @@ from csv import reader
 import sys
 import time
 
-def ledsOFF():
-    NUMBEROFLEDS = 750
+
+def ledsOFF(n_leds):
+    NUMBEROFLEDS = n_leds
     pixels = neopixel.NeoPixel(board.D18, NUMBEROFLEDS, auto_write=False,
                                pixel_order=neopixel.RGB, brightness=0.7)
     print('Apagar LEDS')
@@ -17,19 +18,21 @@ def ledsOFF():
     print('proceso terminado')
 
 
-def ledsON():
-    NUMBEROFLEDS = 750
+def ledsON(n_leds):
+    NUMBEROFLEDS = n_leds
     pixels = neopixel.NeoPixel(board.D18, NUMBEROFLEDS, auto_write=False,
                                pixel_order=neopixel.RGB, brightness=0.7)
-    print('Apagar LEDS')
+    print('Prender LEDS')
     pixels.fill((255, 255, 255))
     pixels.show()
     time.sleep(1)
     print('proceso terminado')
 
+
 swtich = sys.argv[1]
+n_leds = int(sys.argv[2])
 
 if swtich == "ON":
-    ledsON()
+    ledsON(n_leds)
 elif swtich == "OFF":
-    ledsOFF()
+    ledsOFF(n_leds)
