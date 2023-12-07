@@ -6,11 +6,11 @@ from csv import reader
 import sys
 import time
 
-
+brightness=0.5
 def ledsOFF(n_leds=750):
     NUMBEROFLEDS = n_leds
     pixels = neopixel.NeoPixel(board.D18, NUMBEROFLEDS, auto_write=False,
-                               pixel_order=neopixel.RGB, brightness=0.8)
+                               pixel_order=neopixel.RGB, brightness=brightness)
     print('Apagar LEDS')
     pixels.fill((0, 0, 0))
     pixels.show()
@@ -21,7 +21,7 @@ def ledsOFF(n_leds=750):
 def ledsON(n_leds=750):
     NUMBEROFLEDS = n_leds
     pixels = neopixel.NeoPixel(board.D18, NUMBEROFLEDS, auto_write=False,
-                               pixel_order=neopixel.RGB, brightness=0.8)
+                               pixel_order=neopixel.RGB, brightness=brightness)
     print('Prender LEDS')
     pixels.fill((255, 255, 255))
     pixels.show()
