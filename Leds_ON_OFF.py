@@ -39,4 +39,4 @@ if swtich == "ON":
     ledsOFF()
     ledsON(n_leds)
 elif swtich == "OFF":
-    ledsOFF(n_leds)
+    ledsOFF()
