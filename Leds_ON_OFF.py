@@ -30,7 +30,10 @@ def ledsON(n_leds=750):
 
 
 swtich = sys.argv[1]
-n_leds = int(sys.argv[2])
+try:
+    n_leds = int(sys.argv[2])
+except:
+    n_leds = 750
 
 if swtich == "ON":
     ledsON(n_leds)
