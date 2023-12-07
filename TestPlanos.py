@@ -13,11 +13,11 @@ def chunks(lst, n):
         yield lst[i:i + n]
 
 
-def run_testplanos(csvFile, sleep_time):
+def run_testplanos(csvFile, sleep_time, verbose=True):
     print(csvFile)
     NUMBEROFLEDS = 750
     pixels = neopixel.NeoPixel(board.D18, NUMBEROFLEDS, auto_write=False,
-                               pixel_order=neopixel.RGB, brightness=0.6)
+                               pixel_order=neopixel.RGB, brightness=0.5)
 
     # read the file
     # iterate through the entire thing and make all the points the same colour
@@ -40,7 +40,8 @@ def run_testplanos(csvFile, sleep_time):
     ciclo = 0
     while True:
         for n, frame in enumerate(lightArray):
-            print("running frame " + str(n))
+            if verbose:
+                print("running frame " + str(n))
             LED = 0
             while LED < NUMBEROFLEDS:
                 pixels[LED] = frame[LED]
