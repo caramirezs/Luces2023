@@ -23,6 +23,9 @@ def ledsON(n_leds=750):
     pixels = neopixel.NeoPixel(board.D18, NUMBEROFLEDS, auto_write=False,
                                pixel_order=neopixel.RGB, brightness=0.7)
     print('Prender LEDS')
+    pixels.fill((0, 0, 0))
+    pixels.show()
+    time.sleep(0.1)
     pixels.fill((255, 255, 255))
     pixels.show()
     time.sleep(1)
